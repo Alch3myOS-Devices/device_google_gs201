@@ -5,13 +5,16 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Build Duplicates
+BUILD_BROKEN_DUP_RULES := true
+
 include build/make/target/board/BoardConfigMainlineCommon.mk
 include build/make/target/board/BoardConfigPixelCommon.mk
 
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_VARIANT := cortex-a55
+TARGET_CPU_VARIANT := cortex-a76
 
 # Enable 64-bit for non-zygote.
 ZYGOTE_FORCE_64 := true

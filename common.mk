@@ -5,6 +5,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Disable Artifact Requirements
+DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
+
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
@@ -391,15 +394,7 @@ PRODUCT_PACKAGES += \
     EuiccSupportPixelOverlay \
     FrameworkResOverlayProductGs201 \
     FrameworkResOverlayVendorGs201 \
-    GlanceableHubConfigOverlay \
-    GlanceableHubSettingsConfigOverlay \
-    GlanceableHubSettingsConfigOverlay2022 \
-    GlanceableHubSysuiConfigOverlay \
-    GoogleConfigOverlay \
     GooglePermissionControllerSafetyCenterOverlay \
-    PixelConfigOverlay2019 \
-    PixelConfigOverlay2021 \
-    PixelConfigOverlayCommon \
     PixelConnectivityOverlay2023_midyear \
     PixelNfcOverlayCommon \
     PixelTetheringOverlay2021 \
@@ -429,6 +424,7 @@ PRODUCT_PACKAGES += \
     GoogleParts
 
 # Properties
+TARGET_SYSTEM_PROP += device/google/zuma/system.prop
 TARGET_PRODUCT_PROP += device/google/gs201/product.prop
 ifneq ($(TARGET_IS_TABLET),true)
 TARGET_PRODUCT_PROP += device/google/gs201/product-phone.prop
